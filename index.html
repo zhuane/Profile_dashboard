@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/pro.css">
+    <link href="./css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <link rel="stylesheet" href="./fontawesome-free-5.15.4-web/css/all.css">
+    <title>Profile</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <style>
+        .lis a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 16px;
+            text-decoration: none;
+
+        }
+
+        @media only screen and (max-width: 620px) {
+
+            /* For mobile phones: */
+            li {
+                float: none;
+            }
+
+            .ppo {
+
+                height: auto;
+            }
+
+            .butgo {
+                font-size: 5vw;
+
+            }
+
+        }
+    </style>
+</head>
+
+<body class="grid-container" id="demo">
+
+    <div class="item1 ">
+        <div>
+            <button type="button" onclick="myFunction()">Dmama</button>
+            <button type="button" onclick="white()">Bright</button>
+        </div>
+
+        <div class="center">
+
+            <a href="#aboutModal" data-toggle="modal" data-target="#myModal">
+                <img src="./img/131439639.jpg" name="aboutme" width="140" height="140"></a>
+
+
+
+        </div>
+
+    </div>
+
+    <div class="item2 posi2">
+
+
+    </div>
+
+    <div class="item3">
+        <h1 style="color: aliceblue; text-align:center ;" class="butgo">NOBI NOBITA</h1>
+
+    </div>
+
+
+
+    <div class="item5"><br>
+        <ul>
+            <div class="lis butgo">
+                <li><a href="aboutMe.html" target="switch">About me</a></li>
+                <li><a href="pic.html" target="switch">Picture</a></li>
+                <li><a href="#contact" target="switch">List Music</a></li>
+                <li><a href="#about" target="switch">List Movie</a></li>
+            </div>
+        </ul>
+        <iframe src="aboutMe.html" class="new" name="switch" style="margin-left: 40px ;border:20px solid red"
+            height="500px" width="90%" title="Iframe Example"></iframe>
+        <br><br>
+        <div id="app">
+            <h1 style="text-align: center;"> {{text}}</h1>
+            <canvas id="myChart" style="width:100%;max-width:100%"></canvas>
+        </div>
+
+    </div>
+
+
+    <footer style="background-color: black;"></footer>
+
+    <script src="mine.js"></script>
+    <script>
+        function myFunction() {
+
+            document.getElementById("demo").style.backgroundColor = "#44546a";
+        }
+    </script>
+    <script>
+        function white() {
+
+            document.getElementById("demo").style.backgroundColor = "#fff";
+        }
+
+    </script>
+    <script>
+        var xValues = ["Sleep", "Study", "Sport", "Eat"];
+        
+        var yValues = [1000, 10, 20, 24];
+        var barColors = [
+          "#b91d47",
+          "#00aba9",
+          "#2b5797",
+          "#e8c3b9",
+          
+        ];
+        
+        new Chart("myChart", {
+          type: "doughnut",
+          data: {
+            labels: xValues,
+            datasets: [{
+              backgroundColor: barColors,
+              data: yValues
+            }]
+          },
+          options: {
+            title: {
+              display: true,
+              
+            }
+          }
+        });
+        </script>
+</body>
+
+</html>
